@@ -1,12 +1,16 @@
 # kale-program-language-white-paper
 
+
+## BASIC Syntactic 
 this code syntax like css
 
-```scss!
+```css=
 ClazzName {
     @Inject
     width int: 100;
-    height: @Required @Inject(scaneRange=ScaneRange.Default);
+    @Required 
+    @Inject(scaneRange=ScaneRange.Default);
+    height: null;
     @Param
     @Required 
     background OtherClass: null;
@@ -15,7 +19,7 @@ ClazzName {
         width: 5px;
         color: #ccc;
     }
-    func1:<
+    func1:<  // --A
         console.log('HI~');
     >
     $val: <
@@ -24,9 +28,21 @@ ClazzName {
 }
 
 const = ClazzName(
-height = 50;
-background  = NewClass() ;
+    height = 50;
+    background  = NewClass() ;
 )
-
-
 ```
+
+### Syntactic sugar
+
+- A :
+```css=
+func1:{
+    $val: <
+        console.log('HI~');
+        return undefined;
+    >    
+}
+```
+
+
